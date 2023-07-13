@@ -56,3 +56,5 @@ if __name__ == '__main__':
 }
 
     """
+
+    moscowpython.field_filler()
