@@ -44,7 +44,7 @@ class Channel:
 
         params = {
             'key': self.api_key,
-            'part': 'snippet,statistics',
+            'part': 'snippet, statistics',
             'id': self.channel_id
         }
         response = requests.get(self.req_url, params=params)
@@ -95,5 +95,5 @@ class Channel:
     def to_json(self, file_name) -> None:
         dict_json = self.print_info()
         """Создает словарь в json-подобном удобном формате с отступами"""
-        with open(file_name, 'w') as outfile:
+        with open(file_name, 'w', encoding="utf-8") as outfile:
             json.dump(dict_json, outfile, indent=2, ensure_ascii=False)

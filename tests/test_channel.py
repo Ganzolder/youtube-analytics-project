@@ -17,7 +17,7 @@ def test_channel_response():
 def test_channel_data():
     assert Channel('UC-OVMPlMA3-YCIeg4z5z23A').title == "MoscowPython"
     assert Channel('UC-OVMPlMA3-YCIeg4z5z23A').url == "https://www.youtube.com/channel/UC-OVMPlMA3-YCIeg4z5z23A"
-    assert Channel('UC-OVMPlMA3-YCIeg4z5z23A').video_count == '693'
+    assert Channel('UC-OVMPlMA3-YCIeg4z5z23A').video_count == '694'
 
 def test_channel_setter():
     with pytest.raises(AttributeError):
