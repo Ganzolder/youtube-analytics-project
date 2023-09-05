@@ -1,15 +1,19 @@
 from src.channel import Channel
 import requests
 
+class Id_error(Exception):
+    def __init__(self):
+        self.message = 'Жопа'
+
 
 class Video(Channel):
     def __init__(self, video_id):
         self.req_url = 'https://www.googleapis.com/youtube/v3/videos'
         self.video_id = video_id
-        self.video_title = self.video_title()
-        self.video_views = self.video_views()
-        self.video_url = self.video_url()
-        self.video_likes = self.video_likes()
+        self.video_titlex = self.video_title()
+        self.video_viewsx = self.video_views()
+        self.video_urlx = self.video_url()
+        self.video_likesx = self.video_likes()
 
     def print_info(self):
 
@@ -23,17 +27,27 @@ class Video(Channel):
         return data
 
     def video_title(self):
-        return self.print_info()['items'][0]['snippet']['title']
+        try:
+            return self.print_info()['items'][0]['snippet']['title']
+        except Exception:
+            return None
+
 
     def video_views(self):
-        return self.print_info()['items'][0]['statistics']['viewCount']
-
+        try:
+            return self.print_info()['items'][0]['statistics']['viewCount']
+        except Exception:
+            return None
     def video_likes(self):
-        return self.print_info()['items'][0]['statistics']['likeCount']
-
+        try:
+            return self.print_info()['items'][0]['statistics']['likeCount']
+        except Exception:
+            return None
     def video_url(self):
-        return f'https://www.youtube.com/watch?v={self.video_id}'
-
+        try:
+            return f'https://www.youtube.com/watch?v={self.video_id}'
+        except Exception:
+            return None
     def __str__(self):
         return f'{self.title}'
 
