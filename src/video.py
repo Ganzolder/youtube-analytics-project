@@ -10,10 +10,10 @@ class Video(Channel):
     def __init__(self, video_id):
         self.req_url = 'https://www.googleapis.com/youtube/v3/videos'
         self.video_id = video_id
-        self.video_titlex = self.video_title()
-        self.video_viewsx = self.video_views()
-        self.video_urlx = self.video_url()
-        self.video_likesx = self.video_likes()
+        self.video_title_atr = self.video_title()
+        self.video_views_atr = self.video_views()
+        self.video_url_atr = self.video_url()
+        self.video_likes_atr = self.video_likes()
 
     def print_info(self):
 
